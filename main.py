@@ -61,21 +61,23 @@ my_func_use()
 
 
 def pow_func(x, y):
-    return x ** abs(y)
+    return 1 / x ** abs(y)
 
 
-print(pow_func(3, -4))
+print(pow_func(2, -10))
 
 
 def new_pow_func(x, y):
-    y = abs(y)
-    if y == 0:
-        return 1
+    res = 1
+    for i in range(abs(y)):
+        res *= x
+    if y >= 0:
+        return res
     else:
-        return x * new_pow_func(x,y-1)
+        return 1 / res
 
 
-print(new_pow_func(3, -4))
+print(new_pow_func(2, -10))
 
 
 # 5.
